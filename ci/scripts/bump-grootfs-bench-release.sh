@@ -2,7 +2,7 @@
 git config --global user.email "cf-garden+garden-gnome@pivotal.io"
 git config --global user.name "I am Groot CI"
 
-pushd grootfs-git-repo
+pushd grootfs-bench-git-repo
   head=$(git rev-parse HEAD)
 popd
 

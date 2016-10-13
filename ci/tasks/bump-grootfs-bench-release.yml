@@ -5,8 +5,8 @@ image_resource:
 platform: linux
 inputs:
   - name: grootfs-bench-release
-  - name: grootfs-git-repo
+  - name: grootfs-bench-git-repo
 outputs:
   - name: bumped-release-git
 run:
-  path: grootfs-release-develop/ci/scripts/bump-grootfs-release.sh
+  path: grootfs-bench-release/ci/scripts/bump-grootfs-bench-release.sh
