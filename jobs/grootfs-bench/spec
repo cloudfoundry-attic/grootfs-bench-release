@@ -1,0 +1,27 @@
+---
+name: grootfs-bench
+templates:
+  env.erb: env
+  run.erb: bin/run
+packages:
+- grootfs-bench
+properties:
+  grootfs-bench.datadog_api_key:
+    description: "Datadog api key"
+    default: ""
+  grootfs-bench.datadog_application_key:
+    description: "Datadog application key"
+    default: ""
+  grootfs-bench.image_name:
+    description: "Image to run benchmarks against"
+    default: "docker:///busybox"
+  grootfs-bench.concurrency:
+    description: "Benchmark concurrency"
+    default: 5
+  grootfs-bench.bundles:
+    description: "Number of bundles to create"
+    default: 500
+
+  grootfs.store_path:
+    description: The path to the grootfs store
+    default: /var/vcap/data/grootfs/store

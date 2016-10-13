@@ -1,0 +1,6 @@
+---
+name: grootfs-bench
+dependencies:
+- golang_1.7
+files:
+- code.cloudfoundry.org/grootfs-bench/**/*
