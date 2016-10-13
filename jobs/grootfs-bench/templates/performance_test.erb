@@ -1,0 +1,19 @@
+#!/bin/bash
+
+JOB_DIR=$(dirname $0)
+source ${JOB_DIR}/../env
+
+echo "Warming up cache..."
+grootfs --store <%= p("grootfs.store_path") %> create <%= p("grootfs-bench.image_name") %> my-warm-box &> /dev/null
+
+echo "Running benchmark..."
+grootfs-bench-reporter \
+  --mode runner \
+  --benchBinPath /var/vcap/packages/grootfs-bench/bin/grootfs-bench \
+  [--store <%= p("grootfs.store_path") %> \
+  --concurrency <%= p("grootfs-bench.concurrency") %> \
+  --bundles <%= p("grootfs-bench.bundles") %> \
+  --image <%= p("grootfs-bench.image_name") %> \
+  --json \
+  --nospin \
+  --with-quota ]

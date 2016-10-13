@@ -3,6 +3,7 @@ name: grootfs-bench
 templates:
   env.erb: env
   run.erb: bin/run
+  performance_test.erb: bin/performance_test
 packages:
 - grootfs-bench
 properties:
