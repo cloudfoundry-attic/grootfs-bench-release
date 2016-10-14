@@ -2,7 +2,7 @@
 
 VERSION=$(cat grootfs-bench-release-version/number)
 
-pushd grootfs-release-develop
+pushd grootfs-bench-release
   bosh create release --force --version $VERSION --with-tarball --name grootfs-bench
 popd
 
