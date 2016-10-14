@@ -1,7 +1,7 @@
 image_resource:
   type: docker-image
   source:
-    repository: cfgarden/garden-ci
+    repository: cfgarden/grootfs-bench-release-ci
 platform: linux
 inputs:
   - name: grootfs-bench-release-version
