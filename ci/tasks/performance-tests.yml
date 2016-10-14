@@ -1,0 +1,24 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: cfgarden/grootfs-bench-release-ci
+    tag: latest
+
+inputs:
+  - name: grootfs-ci-secrets
+  - name: grootfs-bench-release
+  - name: grootfs-release-develop
+
+params:
+  BOSH_TARGET:
+  BOSH_USER:
+  BOSH_PASSWORD:
+  BOSH_MANIFEST:
+  DATADOG_API_KEY:
+  DATADOG_APPLICATION_KEY:
+
+run:
+  path: grootfs-bench-release/ci/scripts/performance-tests.sh
