@@ -22,7 +22,3 @@ properties:
   grootfs-bench.bundles:
     description: "Number of bundles to create"
     default: 500
-
-  grootfs.store_path:
-    description: The path to the grootfs store
-    default: /var/vcap/data/grootfs/store
