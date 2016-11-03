@@ -6,4 +6,4 @@ MAXIMUS_USER=$(/var/vcap/packages/idmapper/bin/maximus)
 export HOME=/tmp
 chmod 777 $HOME
 
-su -u \#${MAXIMUS_USER} -c ${BIN_DIR}/performance_test
+sudo -u \#${MAXIMUS_USER} /bin/bash -c "${BIN_DIR}/performance_test"
