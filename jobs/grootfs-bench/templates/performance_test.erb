@@ -5,7 +5,7 @@ STORE_DIR=/var/vcap/data/grootfs/store
 source ${JOB_DIR}/../env
 
 echo "Warming up cache..."
-grootfs --store $STORE_DIR create <%= p("grootfs-bench.image_name") %> my-warm-box &> /dev/null
+grootfs --store $STORE_DIR create <%= p("grootfs-bench.base_image_name") %> my-warm-box &> /dev/null
 
 echo "Running benchmark..."
 grootfs-bench-reporter \
