@@ -13,12 +13,12 @@ properties:
   grootfs-bench.datadog_application_key:
     description: "Datadog application key"
     default: ""
-  grootfs-bench.image_name:
+  grootfs-bench.base_image_name:
     description: "Image to run benchmarks against"
     default: "docker:///busybox"
   grootfs-bench.concurrency:
     description: "Benchmark concurrency"
     default: 5
-  grootfs-bench.bundles:
-    description: "Number of bundles to create"
+  grootfs-bench.images:
+    description: "Number of rootfs images to create"
     default: 500

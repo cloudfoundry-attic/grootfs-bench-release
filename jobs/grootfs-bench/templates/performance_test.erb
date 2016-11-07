@@ -13,8 +13,8 @@ grootfs-bench-reporter \
   --benchBinPath /var/vcap/packages/grootfs-bench/bin/grootfs-bench \
   [--store $STORE_DIR \
   --concurrency <%= p("grootfs-bench.concurrency") %> \
-  --bundles <%= p("grootfs-bench.bundles") %> \
-  --image <%= p("grootfs-bench.image_name") %> \
+  --images <%= p("grootfs-bench.images") %> \
+  --base-image <%= p("grootfs-bench.base_image_name") %> \
   --json \
   --nospin \
   --with-quota ]
