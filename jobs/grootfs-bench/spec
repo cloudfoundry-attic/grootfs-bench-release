@@ -7,6 +7,9 @@ templates:
 packages:
 - grootfs-bench
 properties:
+  grootfs-bench.push_to_datadog:
+    description: "Flag that controls if the metrics will be pushed to Datadog"
+    default: true
   grootfs-bench.datadog_api_key:
     description: "Datadog api key"
     default: ""

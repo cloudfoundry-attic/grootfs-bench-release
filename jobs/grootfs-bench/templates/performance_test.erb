@@ -8,13 +8,23 @@ echo "Warming up cache..."
 grootfs --store $STORE_DIR create <%= p("grootfs-bench.base_image_name") %> my-warm-box &> /dev/null
 
 echo "Running benchmark..."
-grootfs-bench-reporter \
-  --mode runner \
-  --benchBinPath /var/vcap/packages/grootfs-bench/bin/grootfs-bench \
-  [--store $STORE_DIR \
-  --concurrency <%= p("grootfs-bench.concurrency") %> \
-  --images <%= p("grootfs-bench.images") %> \
-  --base-image <%= p("grootfs-bench.base_image_name") %> \
-  --json \
-  --nospin \
-  --with-quota ]
+<% if p("grootfs-bench.push_to_datadog") %>
+  grootfs-bench-reporter \
+    --mode runner \
+    --benchBinPath /var/vcap/packages/grootfs-bench/bin/grootfs-bench \
+    [--store $STORE_DIR \
+    --concurrency <%= p("grootfs-bench.concurrency") %> \
+    --images <%= p("grootfs-bench.images") %> \
+    --base-image <%= p("grootfs-bench.base_image_name") %> \
+    --json \
+    --nospin \
+    --with-quota ]
+<% else %>
+  grootfs-bench \
+    --store $STORE_DIR \
+    --concurrency <%= p("grootfs-bench.concurrency") %> \
+    --images <%= p("grootfs-bench.images") %> \
+    --base-image <%= p("grootfs-bench.base_image_name") %> \
+    --nospin \
+    --with-quota
+<% end %>
