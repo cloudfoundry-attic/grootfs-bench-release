@@ -10,3 +10,4 @@ outputs:
   - name: bosh-release
 run:
   path: grootfs-bench-release/ci/scripts/create-grootfs-bench-release.sh
+  user: root
