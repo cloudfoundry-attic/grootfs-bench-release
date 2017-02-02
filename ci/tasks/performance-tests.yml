@@ -11,6 +11,7 @@ inputs:
   - name: grootfs-ci-secrets
   - name: grootfs-bench-release
   - name: grootfs-release-develop
+  - name: manifests
 
 params:
   BOSH_TARGET:
