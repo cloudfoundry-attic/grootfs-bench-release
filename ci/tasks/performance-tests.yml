@@ -23,3 +23,4 @@ params:
 
 run:
   path: grootfs-bench-release/ci/scripts/performance-tests.sh
+  user: root
