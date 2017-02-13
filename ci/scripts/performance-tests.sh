@@ -34,4 +34,4 @@ fi
 echo "Running performance tests..."
 bosh target $BOSH_TARGET
 bosh deployment $BOSH_MANIFEST
-bosh run errand grootfs-bench
+bosh run errand grootfs-bench-$FS_DRIVER

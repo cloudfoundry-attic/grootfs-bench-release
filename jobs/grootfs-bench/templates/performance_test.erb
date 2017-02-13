@@ -1,7 +1,7 @@
 #!/bin/bash
 
 JOB_DIR=$(dirname $0)
-STORE_DIR=/var/vcap/data/grootfs/store
+STORE_DIR=/var/vcap/data/grootfs/store/unprivileged
 source ${JOB_DIR}/../env
 
 echo "Warming up cache..."
@@ -11,8 +11,10 @@ echo "Running benchmark..."
 <% if p("grootfs-bench.push_to_datadog") %>
   grootfs-bench-reporter \
     --mode runner \
+    --metricPrefix <%= p("grootfs-bench.datadog_prefix") %> \
     --benchBinPath /var/vcap/packages/grootfs-bench/bin/grootfs-bench \
     [--store $STORE_DIR \
+    --driver <%= p("grootfs.driver") %> \
     --concurrency <%= p("grootfs-bench.concurrency") %> \
     --images <%= p("grootfs-bench.images") %> \
     --base-image <%= p("grootfs-bench.base_image_name") %> \
@@ -22,6 +24,7 @@ echo "Running benchmark..."
 <% else %>
   grootfs-bench \
     --store $STORE_DIR \
+    --driver <%= p("grootfs.driver") %> \
     --concurrency <%= p("grootfs-bench.concurrency") %> \
     --images <%= p("grootfs-bench.images") %> \
     --base-image <%= p("grootfs-bench.base_image_name") %> \

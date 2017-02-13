@@ -6,6 +6,7 @@ templates:
   performance_test.erb: bin/performance_test
 packages:
 - grootfs-bench
+- busybox
 properties:
   grootfs-bench.push_to_datadog:
     description: "Flag that controls if the metrics will be pushed to Datadog"
@@ -16,12 +17,18 @@ properties:
   grootfs-bench.datadog_application_key:
     description: "Datadog application key"
     default: ""
+  grootfs-bench.datadog_prefix:
+    description: "Datadog metric prefix"
+    default: ""
   grootfs-bench.base_image_name:
     description: "Image to run benchmarks against"
-    default: "docker:///busybox"
+    default: "/var/vcap/packages/busybox/busybox.tar"
   grootfs-bench.concurrency:
     description: "Benchmark concurrency"
     default: 5
   grootfs-bench.images:
     description: "Number of rootfs images to create"
     default: 500
+
+  grootfs.driver:
+    description: "Filesystem driver to use"

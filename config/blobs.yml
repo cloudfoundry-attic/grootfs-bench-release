@@ -3,3 +3,7 @@ golang/go1.7.1.linux-amd64.tar.gz:
   object_id: 14c7b3e7-5518-496d-a7af-ddd085be3332
   sha: 919ab01305ada0078a9fdf8a12bb56fb0b8a1444
   size: 81618401
+busybox/busybox.tar:
+  object_id: 5476f5d3-bb4d-43ef-9c41-00a170da509c
+  sha: ea7f84ddbef888d1e7d5d10a9be3ae1eb43ceaaf
+  size: 2644992
