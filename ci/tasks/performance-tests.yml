@@ -11,13 +11,13 @@ inputs:
   - name: grootfs-ci-secrets
   - name: grootfs-bench-release
   - name: grootfs-release-develop
-  - name: manifests
 
 params:
   BOSH_TARGET:
-  BOSH_USER:
-  BOSH_PASSWORD:
-  BOSH_MANIFEST:
+  BOSH_CLIENT:
+  BOSH_CLIENT_SECRET:
+  BOSH_DEPLOYMENT:
+  BOSH_CERTIFICATES:
   ERRAND_NAME:
   DATADOG_API_KEY:
   DATADOG_APPLICATION_KEY:
