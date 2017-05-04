@@ -1,0 +1,15 @@
+---
+name: long-running-bench
+
+templates:
+  run.sh.erb: bin/run.sh
+
+packages: []
+
+properties:
+  grootfs_bench.interval:
+    description: "Interval between bench runs in seconds"
+    default: 2
+  grootfs_bench.default_rootfs:
+    description: "Default rootfs to use as base image"
+    default: "/var/vcap/packages/cflinuxfs2/rootfs.tar"

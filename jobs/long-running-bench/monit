@@ -1,0 +1,5 @@
+check process long-running-bench
+  with pidfile /var/vcap/sys/run/grootfs-bench.pid
+  start program = "/var/vcap/jobs/long-running-bench/bin/run.sh start"
+  stop program = "/var/vcap/jobs/long-running-bench/bin/run.sh stop"
+  group vcap
