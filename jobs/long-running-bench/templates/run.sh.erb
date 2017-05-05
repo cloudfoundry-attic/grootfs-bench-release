@@ -4,15 +4,16 @@ export PATH=/var/vcap/packages/grootfs/bin/:$PATH
 GROOTFS_CONFIG=/var/vcap/jobs/grootfs/config/grootfs_config.yml
 BASE_IMAGE=<%= p("grootfs_bench.default_rootfs") %>
 PID_FILE=/var/vcap/sys/run/grootfs-bench.pid
+LOG_FILE=/var/vcap/sys/log/grootfs/grootfs.log
 
 run(){
   while true
   do
     i=$(cat /proc/sys/kernel/random/uuid)
     touch $BASE_IMAGE || true
-    grootfs --config $GROOTFS_CONFIG create $BASE_IMAGE bench-image-$i
-    grootfs --config $GROOTFS_CONFIG delete bench-image-$i
-    grootfs --config $GROOTFS_CONFIG clean
+    grootfs --config $GROOTFS_CONFIG --log-level debug --log-file $LOG_FILE create $BASE_IMAGE bench-image-$i
+    grootfs --config $GROOTFS_CONFIG --log-level debug --log-file $LOG_FILE delete bench-image-$i
+    grootfs --config $GROOTFS_CONFIG --log-level debug --log-file $LOG_FILE clean
 
     sleep <%= p("grootfs_bench.interval") %>
   done
