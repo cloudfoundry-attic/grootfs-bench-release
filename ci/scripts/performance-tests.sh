@@ -7,8 +7,8 @@ grootfs_bench_path=grootfs-bench-release/src/code.cloudfoundry.org/grootfs-bench
 
 publish_event() {
   pushd $grootfs_path
-    EVENT_TITLE=$(git log --oneline -n 1)
-    EVENT_MESSAGE=$(git log -1 --pretty=%B)
+    EVENT_TITLE="$(git log --oneline -n 1)"
+    EVENT_MESSAGE="$(git log -1 --pretty=%B)"
   popd
 
   pushd $grootfs_bench_path
