@@ -15,7 +15,9 @@ echo "Running benchmark..."
     --benchBinPath /var/vcap/packages/grootfs-bench/bin/grootfs-bench \
     [--store $STORE_DIR \
     --driver <%= p("grootfs.driver") %> \
-    --enable-groot-metrics <%= p("grootfs-bench.enable_groot_metrics") %> \
+    <% if p("grootfs-bench.enable_groot_metrics") %> \
+    --enable-groot-metrics \
+    <% end %> \
     --concurrency <%= p("grootfs-bench.concurrency") %> \
     --images <%= p("grootfs-bench.images") %> \
     --base-image <%= p("grootfs-bench.base_image_name") %> \
