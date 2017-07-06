@@ -26,6 +26,9 @@ properties:
   grootfs-bench.concurrency:
     description: "Benchmark concurrency"
     default: 5
+  grootfs-bench.enable_groot_metrics:
+    description: "Also emit grootfs creation/deletion/clean metrics to metron agent"
+    default: false
   grootfs-bench.images:
     description: "Number of rootfs images to create"
     default: 500
