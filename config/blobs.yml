@@ -1,5 +1,6 @@
 bench-busybox/bench-busybox.tar:
   size: 2644992
+  object_id: 7b3645e9-1d73-4204-5d25-1eb6ef05b394
   sha: ea7f84ddbef888d1e7d5d10a9be3ae1eb43ceaaf
 golang/go1.8.1.linux-amd64.tar.gz:
   size: 91277742
