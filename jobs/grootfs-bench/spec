@@ -22,7 +22,7 @@ properties:
     default: ""
   grootfs-bench.base_image_name:
     description: "Image to run benchmarks against"
-    default: "/var/vcap/packages/bench-busybox/busybox.tar"
+    default: "/var/vcap/packages/bench-busybox/bench-busybox.tar"
   grootfs-bench.concurrency:
     description: "Benchmark concurrency"
     default: 5
