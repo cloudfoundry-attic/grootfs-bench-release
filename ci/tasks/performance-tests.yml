@@ -8,9 +8,7 @@ image_resource:
     tag: latest
 
 inputs:
-  - name: grootfs-ci-secrets
   - name: grootfs-bench-release
-  - name: grootfs-release-develop
 
 params:
   BOSH_TARGET:
