@@ -6,7 +6,7 @@ templates:
   performance_test.erb: bin/performance_test
 packages:
 - grootfs-bench
-- busybox
+- bench-busybox
 properties:
   grootfs-bench.push_to_datadog:
     description: "Flag that controls if the metrics will be pushed to Datadog"
@@ -22,7 +22,7 @@ properties:
     default: ""
   grootfs-bench.base_image_name:
     description: "Image to run benchmarks against"
-    default: "/var/vcap/packages/busybox/busybox.tar"
+    default: "/var/vcap/packages/bench-busybox/busybox.tar"
   grootfs-bench.concurrency:
     description: "Benchmark concurrency"
     default: 5
