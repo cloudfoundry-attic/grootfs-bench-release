@@ -28,6 +28,9 @@ echo "Running benchmark..."
   grootfs-bench \
     --store $STORE_DIR \
     --driver <%= p("grootfs.driver") %> \
+    <% if p("grootfs-bench.enable_groot_metrics") %> \
+    --enable-groot-metrics \
+    <% end %> \
     --concurrency <%= p("grootfs-bench.concurrency") %> \
     --images <%= p("grootfs-bench.images") %> \
     --base-image <%= p("grootfs-bench.base_image_name") %> \
